@@ -1,14 +1,16 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
+
 public class Backlog {
 
-    private Feature features;
+    private ArrayList<Feature> features;
 
-    public Feature getFeatures() {
+    public ArrayList<Feature> getFeatures() {
         return features;
     }
 
-    public void setFeatures(Feature features) {
+    public void setFeatures(ArrayList<Feature> features) {
         this.features = features;
     }
 

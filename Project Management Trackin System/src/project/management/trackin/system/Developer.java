@@ -1,25 +1,26 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
+
 public class Developer {
 
-    private Feature features;
+    private ArrayList<Feature> features;
+    private String name;
 
-    public Feature getFeatures() {
+    public ArrayList<Feature> getFeatures() {
         return features;
     }
 
-    public void setFeatures(Feature Features) {
-        this.features = Features;
+    public void setFeatures(ArrayList<Feature> features) {
+        this.features = features;
     }
-
-    private String Name;
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
 }

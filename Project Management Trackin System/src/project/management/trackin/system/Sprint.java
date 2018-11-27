@@ -1,19 +1,20 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Sprint {
 
-    private Feature features;
+    private ArrayList<Feature> features;
     private int duration;
     private Date startDate;
     private Date endDate;
 
-    public Feature getFeatures() {
+    public ArrayList<Feature> getFeatures() {
         return features;
     }
 
-    public void setFeatures(Feature features) {
+    public void setFeatures(ArrayList<Feature> features) {
         this.features = features;
     }
 

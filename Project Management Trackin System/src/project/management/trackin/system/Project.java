@@ -1,16 +1,18 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
+
 public class Project {
 
-    private ProjectRelease releases;
+    private ArrayList<ProjectRelease> releases;
     private String name;
     private Backlog backlog;
 
-    public ProjectRelease getReleases() {
+    public ArrayList<ProjectRelease> getReleases() {
         return releases;
     }
 
-    public void setReleases(ProjectRelease releases) {
+    public void setReleases(ArrayList<ProjectRelease> releases) {
         this.releases = releases;
     }
 

@@ -1,15 +1,17 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
+
 public class ProjectRelease {
 
-    private Sprint sprints;
+    private ArrayList<Sprint> sprints;
     private String version;
 
-    public Sprint getSprints() {
+    public ArrayList<Sprint> getSprints() {
         return sprints;
     }
 
-    public void setSprints(Sprint sprints) {
+    public void setSprints(ArrayList<Sprint> sprints) {
         this.sprints = sprints;
     }
 

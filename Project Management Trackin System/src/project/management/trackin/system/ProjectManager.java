@@ -1,21 +1,23 @@
 package project.management.trackin.system;
 
+import java.util.ArrayList;
+
 public class ProjectManager {
 
-    private Report dailyReports;
+    private ArrayList<Report> dailyReports;
     private String name;
 
-    public void AssignFeaturesToDevelopers() {
+    public void assignFeaturesToDevelopers() {
     }
 
-    public void AddFeaturesToRelease() {
+    public void addFeaturesToRelease() {
     }
 
-    public Report getDailyReports() {
+    public ArrayList<Report> getDailyReports() {
         return dailyReports;
     }
 
-    public void setDailyReports(Report dailyReports) {
+    public void setDailyReports(ArrayList<Report> dailyReports) {
         this.dailyReports = dailyReports;
     }
 
