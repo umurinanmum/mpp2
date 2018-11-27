@@ -8,6 +8,10 @@ public class Project {
     private String name;
     private Backlog backlog;
 
+    public void addRelease(ProjectRelease projectRelease){
+        
+    }
+    
     public ArrayList<ProjectRelease> getReleases() {
         return releases;
     }

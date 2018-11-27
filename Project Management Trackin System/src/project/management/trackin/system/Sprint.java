@@ -10,6 +10,10 @@ public class Sprint {
     private Date startDate;
     private Date endDate;
 
+    public void addFeature(Feature feature){
+        
+    }
+    
     public ArrayList<Feature> getFeatures() {
         return features;
     }

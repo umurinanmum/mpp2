@@ -6,6 +6,10 @@ public class Backlog {
 
     private ArrayList<Feature> features;
 
+    public void addFeature(Feature feature) {
+
+    }
+
     public ArrayList<Feature> getFeatures() {
         return features;
     }

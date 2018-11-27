@@ -6,11 +6,24 @@ public class ProjectManager {
 
     private ArrayList<Report> dailyReports;
     private String name;
+    private ArrayList<Project> projects;
+
+    public void createReport(Report report) {
+
+    }
 
     public void assignFeaturesToDevelopers() {
     }
 
     public void addFeaturesToRelease() {
+    }
+
+    public ArrayList<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(ArrayList<Project> projects) {
+        this.projects = projects;
     }
 
     public ArrayList<Report> getDailyReports() {

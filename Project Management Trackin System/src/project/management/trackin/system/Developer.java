@@ -7,6 +7,18 @@ public class Developer {
     private ArrayList<Feature> features;
     private String name;
 
+    public void estimateFeature(){
+        
+    }
+    
+    public void updateFeatureStatus(){
+        
+    }
+    
+    public void assignFeature(Feature feature){
+        
+    }
+    
     public ArrayList<Feature> getFeatures() {
         return features;
     }

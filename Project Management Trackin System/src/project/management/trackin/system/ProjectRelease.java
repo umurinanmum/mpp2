@@ -6,6 +6,10 @@ public class ProjectRelease {
 
     private ArrayList<Sprint> sprints;
     private String version;
+    
+    public void addSprint(Sprint sprint){
+        
+    }
 
     public ArrayList<Sprint> getSprints() {
         return sprints;
