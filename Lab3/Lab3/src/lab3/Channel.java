@@ -1,8 +1,7 @@
 package lab3;
 
-public class Channel {
+public abstract class Channel {
 
-    protected double bandwith;
-    
-    
+    protected double bandwidth;
+
 }
