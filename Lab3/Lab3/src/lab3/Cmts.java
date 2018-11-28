@@ -14,7 +14,7 @@ public class Cmts {
     private ArrayList<Cm> registeredCms;
 
     public void register(Cm cm) {
-        // call the load balance assigncm method
+        // call the load balancer assigncm method
     }
 
     public void unregister(Cm cm) {
