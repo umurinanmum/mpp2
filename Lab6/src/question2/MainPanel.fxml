@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="question2.MainPanelController">
+	<children>
+		<Button layoutX="79.0" layoutY="99.0" mnemonicParsing="false" onAction="#count" text="Count Letters" />
+		<Button layoutX="79.0" layoutY="173.0" mnemonicParsing="false" onAction="#reverse" text="Reverse Letters" />
+		<Button layoutX="79.0" layoutY="250.0" mnemonicParsing="false" onAction="#removeDup" text="Remove Duplicates" />
+		<Label layoutX="347.0" layoutY="99.0" text="Input" />
+		<Label layoutX="347.0" layoutY="192.0" text="Output" />
+		<TextField fx:id="input" layoutX="341.0" layoutY="126.0" />
+		<TextField fx:id="output" editable="false" layoutX="341.0" layoutY="223.0" />
+	</children>
+</Pane>
