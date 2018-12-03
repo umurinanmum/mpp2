@@ -2,7 +2,7 @@ package book;
 
 import java.util.ArrayList;
 
-public class Book {
+public class BookInfo {
 
 	private int maxAllowedDays;
 	private String title;
