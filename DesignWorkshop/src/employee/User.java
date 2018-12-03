@@ -12,6 +12,6 @@ public class User {
 	private String password;
 	private Address address;
 
-	private ArrayList<Role> roles;
+	private Role role;
 
 }
