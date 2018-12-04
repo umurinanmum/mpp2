@@ -1,9 +1,7 @@
 package book;
 
-import java.net.URL;
-import java.util.ArrayList;
+import java.net.URL; 
 import java.util.ResourceBundle;
-
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,7 +51,10 @@ public class BookController implements Initializable {
 
 	@FXML
 	protected void removeAuthor(ActionEvent actionEvent) {
-
+		String item = authorList.getSelectionModel().getSelectedItem();
+		if(item != null) {
+			authorList.getItems().remove(item);
+		}
 	}
 
 	@Override
@@ -61,14 +62,19 @@ public class BookController implements Initializable {
 		authorCombo.setItems(allAuthors);
 
 		authorCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
-			authorList.getItems().add(newVal);
-			//removeFromList(newVal);
+
+			if (newVal != null) {
+				authorList.getItems().add(newVal);
+				// removeFromList(newVal);
+
+			}
+
 		});
 	}
-	
+
 	private void removeFromList(String val) {
 		for (int i = 0; i < allAuthors.size(); i++) {
-			if(allAuthors.get(i).equals(val)) {
+			if (allAuthors.get(i).equals(val)) {
 				allAuthors.remove(i);
 				break;
 			}
