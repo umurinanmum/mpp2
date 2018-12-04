@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane prefHeight="420.0" prefWidth="570.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MemberController">
+<TabPane prefHeight="420.0" prefWidth="623.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MemberController">
   <tabs>
     <Tab fx:id="addpanel" text="Add Member">
       <content>
@@ -18,6 +18,8 @@
                   <Label layoutX="8.0" layoutY="167.0" text="Street" />
                   <TextField fx:id="fname" layoutX="91.0" layoutY="30.0" prefHeight="25.0" prefWidth="456.0" />
                   <TextField fx:id="lname" layoutX="91.0" layoutY="62.0" prefHeight="25.0" prefWidth="456.0" />
+                  <TextField fx:id="email" layoutX="91.0" layoutY="96.0" prefHeight="25.0" prefWidth="456.0" />
+                  <TextField fx:id="phone" layoutX="90.0" layoutY="130.0" prefHeight="25.0" prefWidth="458.0" />
                   <TextField fx:id="street" layoutX="90.0" layoutY="163.0" prefHeight="25.0" prefWidth="458.0" />
                   <TextField fx:id="city" layoutX="91.0" layoutY="197.0" prefHeight="25.0" prefWidth="457.0" />
                   <TextField fx:id="state" layoutX="90.0" layoutY="231.0" prefHeight="25.0" prefWidth="459.0" />
@@ -25,8 +27,7 @@
                   <Button fx:id="btn_addmember" layoutX="461.0" layoutY="310.0" mnemonicParsing="false" onAction="#AddMember" text="Add Member" />
                   <Label layoutX="9.0" layoutY="100.0" text="Email" />
                   <Label layoutX="10.0" layoutY="134.0" text="Phone" />
-                  <TextField fx:id="email" layoutX="91.0" layoutY="96.0" prefHeight="25.0" prefWidth="456.0" />
-                  <TextField fx:id="phone" layoutX="90.0" layoutY="130.0" prefHeight="25.0" prefWidth="458.0" />
+                  <Button fx:id="btn_clear" layoutX="557.0" layoutY="310.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -54,6 +55,7 @@
                   <TextField fx:id="stateedit" layoutX="97.0" layoutY="285.0" prefHeight="25.0" prefWidth="458.0" />
                   <TextField fx:id="zipedit" layoutX="97.0" layoutY="320.0" prefHeight="25.0" prefWidth="459.0" />
                   <Button fx:id="savemember" layoutX="462.0" layoutY="352.0" mnemonicParsing="false" onAction="#SaveMember" text="Save Member" />
+                  <Button fx:id="btn_clearEdit" layoutX="556.0" layoutY="352.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
                </children></AnchorPane>
       </content>
     </Tab>

@@ -1,1 +1,16 @@
+<<<<<<< HEAD
 /application/
+=======
+<<<<<<< HEAD
+/ui/
+/controller/
+/dataAccess/
+=======
+/DAL/
+/application/
+/book/
+/employee/
+/log/
+/member/
+>>>>>>> 3f8689efc3d0ee54151f8435b25435ffae91c2a3
+>>>>>>> 67ad83a635bc2544acdc4da2af369cbbb0937e64
