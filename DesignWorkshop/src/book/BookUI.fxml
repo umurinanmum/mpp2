@@ -5,25 +5,32 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="311.0" layoutY="27.0" text="Book">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="39.0" layoutY="98.0" text="Title" />
-      <Label layoutX="35.0" layoutY="146.0" text="Isbn" />
-      <Label layoutX="31.0" layoutY="194.0" text="Max Allowed Days" />
-      <TextField fx:id="title" layoutX="202.0" layoutY="93.0" />
-      <TextField fx:id="isbn" layoutX="202.0" layoutY="141.0" />
-      <TextField fx:id="maxAllowedDays" layoutX="202.0" layoutY="181.0" />
-      <Label layoutX="31.0" layoutY="241.0" text="Authors" />
-      <ChoiceBox fx:id="authorsSelect" layoutX="202.0" layoutY="236.0" prefWidth="150.0" />
-      <ListView fx:id="authorList" layoutX="31.0" layoutY="296.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="removeAuthor" layoutX="256.0" layoutY="296.0" mnemonicParsing="false" text="Remove Author" />
-      <Button fx:id="save" layoutX="413.0" layoutY="563.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="cancel" layoutX="538.0" layoutY="563.0" mnemonicParsing="false" text="Cancel" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0"
+	prefWidth="672.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.BookController">
+	<children>
+		<Label layoutX="311.0" layoutY="27.0" text="Book">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<Label layoutX="39.0" layoutY="98.0" text="Title" />
+		<Label layoutX="35.0" layoutY="146.0" text="Isbn" />
+		<Label layoutX="31.0" layoutY="194.0" text="Max Allowed Days" />
+		<TextField fx:id="title" layoutX="202.0" layoutY="93.0" />
+		<TextField fx:id="isbn" layoutX="202.0" layoutY="141.0" />
+		<TextField fx:id="maxAllowedDays" layoutX="202.0"
+			layoutY="181.0" />
+		<Label layoutX="31.0" layoutY="241.0" text="Authors" />
+		<ListView fx:id="authorList" layoutX="31.0" layoutY="296.0"
+			prefHeight="200.0" prefWidth="200.0" />
+		<Button fx:id="removeAuthor" layoutX="256.0" layoutY="296.0"
+			mnemonicParsing="false" text="Remove Author" />
+		<Button fx:id="save" layoutX="413.0" layoutY="563.0"
+			mnemonicParsing="false" text="Save" />
+		<Button fx:id="cancel" layoutX="538.0" layoutY="563.0"
+			mnemonicParsing="false" text="Cancel" />
+		<ComboBox fx:id="authorCombo" layoutX="202.0" layoutY="236.0" prefWidth="150.0" />
+	</children>
 </Pane>
