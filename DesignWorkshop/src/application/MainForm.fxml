@@ -13,6 +13,7 @@
             <Font size="45.0" />
          </font>
       </Label>
+      <Button layoutX="670.0" layoutY="176.0" mnemonicParsing="false" onAction="#addEditAuthor_click" text="Add/Edit Author" />
       <Button layoutX="544.0" layoutY="176.0" mnemonicParsing="false" onAction="#checkoutBook_click" text="Checkout Book" />
       <Button layoutX="404.0" layoutY="176.0" mnemonicParsing="false" onAction="#addEditMember_click" text="Add/Edit Member" />
       <Button layoutX="279.0" layoutY="176.0" mnemonicParsing="false" onAction="#addEditBook_click" text="Add/Edit Book" />

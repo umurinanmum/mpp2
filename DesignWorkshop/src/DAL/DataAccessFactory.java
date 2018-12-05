@@ -135,6 +135,14 @@ public class DataAccessFactory {
 		return null;
 	}
 	
+	public Author getAuthorByName(String name, String lastname) {
+		for(Author authorVal:authorDB.getDB().values()) {
+			if(name.equals(authorVal.getFirstName())&& lastname.equals(lastname))
+				return authorVal;
+		}
+		return null;
+	}
+	
 	public ArrayList<Author> getAllAuthors(){
 		ArrayList<Author> result = new ArrayList<>();
 		

@@ -39,32 +39,32 @@ public class AuthorController {
 
 	@FXML
 	protected void save(ActionEvent actionEvent) {
-		if (firstName.getText() == null || firstName.getText().equals("")) {
+		if (firstName.getText() == null || firstName.getText().trim().isEmpty()) {
 			Alert alert = new Alert(AlertType.ERROR, "First name cannot be null or empty");
 			alert.showAndWait();
 		}
-		if (lastName.getText() == null || lastName.getText().equals("")) {
+		if (lastName.getText() == null || lastName.getText().trim().isEmpty()) {
 			Alert alert = new Alert(AlertType.ERROR, "Last name cannot be null or empty");
 			alert.showAndWait();
-		}
+		} else {
+			Author author = new Author();
+			author.setFirstName(firstName.getText());
+			author.setLastName(lastName.getText());
+			author.setPhone(phone.getText());
+			author.setBio(bio.getText());
+			author.setCredentials(credentials.getText());
+			author.setAddress(new Address());
+			author.getAddress().setCity(city.getText());
+			author.getAddress().setState(state.getText());
+			author.getAddress().setStreet(street.getText());
+			author.getAddress().setZip(zip.getText());
 
-		Author author = new Author();
-		author.setFirstName(firstName.getText());
-		author.setLastName(lastName.getText());
-		author.setPhone(phone.getText());
-		author.setBio(bio.getText());
-		author.setCredentials(credentials.getText());
-		author.setAddress(new Address());
-		author.getAddress().setCity(city.getText());
-		author.getAddress().setState(state.getText());
-		author.getAddress().setStreet(street.getText());
-		author.getAddress().setZip(zip.getText());
-
-		boolean result = DataAccessFactory.getInstance().addAuthor(author);
-		if (result) {
-			Alert alert = new Alert(AlertType.INFORMATION,
-					"Author has been created with the name " + author.getFirstName() + " " + author.getLastName());
-			alert.showAndWait();
+			boolean result = DataAccessFactory.getInstance().addAuthor(author);
+			if (result) {
+				Alert alert = new Alert(AlertType.INFORMATION,
+						"Author has been created with the name " + author.getFirstName() + " " + author.getLastName());
+				alert.showAndWait();
+			}
 		}
 
 	}
