@@ -1,9 +1,5 @@
-/DAL/
 /application/
 /book/
-/controller/
 /employee/
-/log/
-/member/
-/ui/
 /login/
+/member/
