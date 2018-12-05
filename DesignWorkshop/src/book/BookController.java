@@ -26,6 +26,9 @@ public class BookController implements Initializable {
 
 	@FXML
 	private ComboBox<String> authorCombo;
+	
+	@FXML
+	private ComboBox<String> bookCombo;
 
 	@FXML
 	private TextField title;
@@ -48,6 +51,11 @@ public class BookController implements Initializable {
 	protected void cancel(ActionEvent actionEvent) {
 
 	}
+	
+	@FXML
+	protected void updateBook(ActionEvent actionEvent) {
+
+	}
 
 	@FXML
 	protected void removeAuthor(ActionEvent actionEvent) {
@@ -60,24 +68,29 @@ public class BookController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		authorCombo.setItems(allAuthors);
+		populateBookCombo();
 
 		authorCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
 
 			if (newVal != null) {
 				authorList.getItems().add(newVal);
-				// removeFromList(newVal);
-
 			}
 
 		});
-	}
+		
+		
+		bookCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
 
-	private void removeFromList(String val) {
-		for (int i = 0; i < allAuthors.size(); i++) {
-			if (allAuthors.get(i).equals(val)) {
-				allAuthors.remove(i);
-				break;
+			if (newVal != null) {
+				// set the fields
 			}
-		}
+
+		});
+		
+	}
+	
+	private void populateBookCombo() {
+		bookCombo.setItems(FXCollections.observableArrayList());
+		bookCombo.getItems().add("Test Book");
 	}
 }
