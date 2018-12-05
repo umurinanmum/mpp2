@@ -73,7 +73,7 @@ public class MemberController {
 		
 		Member mb=new Member();
 		Address st=new Address();
-		mb.setId(++memberID);		
+		mb.setId(memberID++);		
 		mb.setName(fname.getText());
 		mb.setSurname(lname.getText());
 		mb.setEmail(email.getText());
@@ -181,7 +181,7 @@ public class MemberController {
 		mb.getAddress().setZip(zipedit.getText());
 		
 		System.out.println("member saved");
-		for(Integer i=1;i<=memberID;i++)
+		for(Integer i=0;i<memberID;i++)
 		{
 			System.out.println(memberdal.getMemberById(i).getName()+ " "+memberdal.getMemberById(i).getSurname());
 		}
