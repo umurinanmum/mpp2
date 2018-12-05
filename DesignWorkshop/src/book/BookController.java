@@ -1,7 +1,9 @@
 package book;
 
-import java.net.URL; 
+import java.net.URL;
 import java.util.ResourceBundle;
+
+import DAL.DataAccessFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,19 +16,9 @@ import javafx.scene.control.TextField;
 
 public class BookController implements Initializable {
 
-	protected ObservableList<String> allAuthors;
-
-	public BookController() {
-		allAuthors = FXCollections.observableArrayList();
-		// populate the authors
-		allAuthors.add("test");
-		allAuthors.add("test2");
-		allAuthors.add("test3");
-	}
-
 	@FXML
 	private ComboBox<String> authorCombo;
-	
+
 	@FXML
 	private ComboBox<String> bookCombo;
 
@@ -51,7 +43,7 @@ public class BookController implements Initializable {
 	protected void cancel(ActionEvent actionEvent) {
 
 	}
-	
+
 	@FXML
 	protected void updateBook(ActionEvent actionEvent) {
 
@@ -60,15 +52,16 @@ public class BookController implements Initializable {
 	@FXML
 	protected void removeAuthor(ActionEvent actionEvent) {
 		String item = authorList.getSelectionModel().getSelectedItem();
-		if(item != null) {
+		if (item != null) {
 			authorList.getItems().remove(item);
 		}
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		authorCombo.setItems(allAuthors);
+
 		populateBookCombo();
+		populateAuthorCombo();
 
 		authorCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
 
@@ -77,20 +70,43 @@ public class BookController implements Initializable {
 			}
 
 		});
-		
-		
+
 		bookCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
 
 			if (newVal != null) {
 				// set the fields
+				BookInfo selectedBook = DataAccessFactory.getInstance().getBookInfoByName(newVal);
+				if (selectedBook != null) {
+					title.setText(selectedBook.getTitle());
+					isbn.setText(selectedBook.getIsbn());
+					maxAllowedDays.setText(selectedBook.getMaxAllowedDays() + "");
+					authorList.getItems().clear();
+					if (selectedBook.getAuthors() != null) {
+						for (int i = 0; i < selectedBook.getAuthors().size(); i++) {
+							authorList.getItems().add(selectedBook.getAuthors().get(i).getFirstName() + " "
+									+ authorList.getItems().add(selectedBook.getAuthors().get(i).getLastName()));
+						}
+					}
+				}
 			}
 
 		});
-		
+
 	}
-	
+
+	private void populateAuthorCombo() {
+		authorCombo.setItems(FXCollections.observableArrayList());
+		for (int i = 0; i < DataAccessFactory.getInstance().getAllAuthors().size(); i++) {
+			authorCombo.getItems().add(DataAccessFactory.getInstance().getAllAuthors().get(i).getFirstName() + " "
+					+ DataAccessFactory.getInstance().getAllAuthors().get(i).getLastName());
+		}
+
+	}
+
 	private void populateBookCombo() {
 		bookCombo.setItems(FXCollections.observableArrayList());
-		bookCombo.getItems().add("Test Book");
+		for (int i = 0; i < DataAccessFactory.getInstance().getAllBooks().size(); i++) {
+			bookCombo.getItems().add(DataAccessFactory.getInstance().getAllBooks().get(i).getTitle());
+		}
 	}
 }
