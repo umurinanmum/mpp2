@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.BookController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="767.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.BookController">
 	<children>
 		<Label layoutX="311.0" layoutY="27.0" text="Book">
 			<font>
@@ -21,8 +21,14 @@
 		<Label layoutX="31.0" layoutY="241.0" text="Authors" />
 		<ListView fx:id="authorList" layoutX="31.0" layoutY="296.0" prefHeight="200.0" prefWidth="200.0" />
 		<Button fx:id="removeAuthor" layoutX="256.0" layoutY="296.0" mnemonicParsing="false" onAction="#removeAuthor" text="Remove Author" />
-		<Button fx:id="save" layoutX="413.0" layoutY="563.0" mnemonicParsing="false" text="Save" />
-		<Button fx:id="cancel" layoutX="538.0" layoutY="563.0" mnemonicParsing="false" text="Cancel" />
+		<Button fx:id="save" layoutX="178.0" layoutY="542.0" mnemonicParsing="false" text="Save" />
+		<Button fx:id="cancel" layoutX="282.0" layoutY="542.0" mnemonicParsing="false" text="Cancel" />
 		<ComboBox fx:id="authorCombo" layoutX="202.0" layoutY="236.0" prefWidth="150.0" />
+      <Pane layoutX="458.0" layoutY="81.0" prefHeight="189.0" prefWidth="386.0">
+         <children>
+            <ComboBox fx:id="bookCombo" layoutX="53.0" layoutY="24.0" prefWidth="150.0" />
+            <Button fx:id="updateBook" layoutX="53.0" layoutY="110.0" mnemonicParsing="false" onAction="#updateBook" prefHeight="27.0" prefWidth="159.0" text="Update" />
+         </children>
+      </Pane>
 	</children>
 </Pane>
