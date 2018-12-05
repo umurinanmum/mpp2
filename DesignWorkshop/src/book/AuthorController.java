@@ -1,23 +1,11 @@
 package book;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-public class AuthorController implements Initializable{
+public class AuthorController{
 	
-	public AuthorController() {
-		
-	}
-	
-	@FXML
-	private ComboBox<String> authorsCombo;
 
 	@FXML
 	private TextField firstName;
@@ -54,18 +42,6 @@ public class AuthorController implements Initializable{
 	@FXML
 	protected void cancel(ActionEvent actionEvent) {
 
-	}
-	
-	@FXML
-	protected void removeAuthor(ActionEvent actionEvent) {
-
-	}
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		authorsCombo.setItems(FXCollections.observableArrayList());
-		authorsCombo.getItems().add("umur");
-		
 	}
 
 }

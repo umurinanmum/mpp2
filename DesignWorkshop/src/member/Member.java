@@ -1,13 +1,13 @@
 package member;
 
 public class Member {
-
 	private Integer id;
 	private String name;
 	private String surname;
 	private Address address;
 	private String email;
 	private String phone;
+
 	public String getName() {
 		return name;
 	}
@@ -44,7 +44,7 @@ public class Member {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	
 	
 }

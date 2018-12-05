@@ -25,4 +25,11 @@ public class DataAccessImpl<K, V> implements DataAccess<K, V> {
 	public V delete(K key) {
 		return dataMap.remove(key);	
 	}
+
+	@Override
+	public Map<K, V> getDB() {
+		return dataMap;
+	}
+	
+	
 }
