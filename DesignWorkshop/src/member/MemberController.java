@@ -1,4 +1,4 @@
-package application;
+package member;
 
 import DAL.DataAccessImpl;
 import javafx.event.ActionEvent;
@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
-import member.Address;
-import member.Member;
 
 public class MemberController {
 	

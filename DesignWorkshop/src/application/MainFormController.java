@@ -32,7 +32,7 @@ public class MainFormController  {
 	protected void addEditBook_click(ActionEvent actionevent)
 	{
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./BookCopyUI.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../book/BookCopyUI.fxml"));
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add/Edit Member Form");
@@ -49,7 +49,7 @@ public class MainFormController  {
 	protected void addEditMember_click(ActionEvent actionevent)
 	{
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./AddEditMember.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Member/AddEditMember.fxml"));
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add/Edit Member Form");
