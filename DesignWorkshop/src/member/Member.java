@@ -1,6 +1,7 @@
 package member;
 
 public class Member {
+
 	private Integer id;
 	private String name;
 	private String surname;
