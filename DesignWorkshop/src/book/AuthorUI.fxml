@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="51.0" layoutY="84.0" text="First Name" />
-      <Label layoutX="51.0" layoutY="137.0" text="Last Name" />
-      <Label layoutX="51.0" layoutY="178.0" text="Phone" />
-      <Label layoutX="50.0" layoutY="223.0" text="Bio" />
-      <Label layoutX="46.0" layoutY="266.0" text="Credentials" />
-      <Label layoutX="43.0" layoutY="318.0" text="Street" />
-      <Label layoutX="45.0" layoutY="359.0" text="City" />
-      <Label layoutX="41.0" layoutY="408.0" text="State" />
-      <Label layoutX="43.0" layoutY="451.0" text="Zip" />
-      <Button layoutX="341.0" layoutY="517.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="467.0" layoutY="517.0" mnemonicParsing="false" text="Cancel" />
-      <TextField fx:id="firstName" layoutX="258.0" layoutY="71.0" />
-      <TextField fx:id="lastName" layoutX="258.0" layoutY="124.0" />
-      <TextField fx:id="phone" layoutX="258.0" layoutY="182.0" />
-      <TextField fx:id="credentials" layoutX="258.0" layoutY="253.0" />
-      <TextField fx:id="street" layoutX="258.0" layoutY="313.0" />
-      <TextField fx:id="city" layoutX="258.0" layoutY="354.0" />
-      <TextField fx:id="state" layoutX="250.0" layoutY="403.0" />
-      <TextField fx:id="zip" layoutX="250.0" layoutY="446.0" />
-      <Label layoutX="290.0" layoutY="21.0" text="Author">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0"
+	prefWidth="898.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="book.AuthorController">
+	<children>
+		<Label layoutX="51.0" layoutY="84.0" text="First Name" />
+		<Label layoutX="51.0" layoutY="137.0" text="Last Name" />
+		<Label layoutX="51.0" layoutY="178.0" text="Phone" />
+		<Label layoutX="50.0" layoutY="223.0" text="Bio" />
+		<Label layoutX="46.0" layoutY="266.0" text="Credentials" />
+		<Label layoutX="50.0" layoutY="305.0" text="Street" />
+		<Label layoutX="47.0" layoutY="354.0" text="City" />
+		<Label layoutX="46.0" layoutY="408.0" text="State" />
+		<Label layoutX="43.0" layoutY="451.0" text="Zip" />
+		<Button layoutX="544.0" layoutY="275.0" mnemonicParsing="false"
+			onAction="#save" text="Save" />
+		<Button layoutX="684.0" layoutY="275.0" mnemonicParsing="false"
+			onAction="#cancel" text="Cancel" />
+		<TextField fx:id="firstName" layoutX="258.0" layoutY="71.0" />
+		<TextField fx:id="lastName" layoutX="258.0" layoutY="124.0" />
+		<TextField fx:id="phone" layoutX="258.0" layoutY="173.0" />
+		<TextField fx:id="credentials" layoutX="258.0"
+			layoutY="253.0" />
+		<TextField fx:id="street" layoutX="258.0" layoutY="300.0" />
+		<TextField fx:id="city" layoutX="258.0" layoutY="349.0" />
+		<TextField fx:id="state" layoutX="258.0" layoutY="403.0" />
+		<TextField fx:id="zip" layoutX="258.0" layoutY="446.0" />
+		<Label layoutX="290.0" layoutY="21.0" text="Author">
+			<font>
+				<Font size="19.0" />
+			</font>
+		</Label>
+		<TextField fx:id="bio" layoutX="258.0" layoutY="218.0" />
+		<Pane layoutX="207.0" layoutY="541.0" prefHeight="200.0"
+			prefWidth="530.0" style="-fx-border-color: black;">
+			<opaqueInsets>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+			</opaqueInsets>
+			<children>
+				<ComboBox fx:id="authorsCombo" layoutX="50.0"
+					layoutY="33.0" prefWidth="150.0" />
+				<Button layoutX="304.0" layoutY="33.0"
+					mnemonicParsing="false" onAction="#removeAuthor" prefHeight="27.0"
+					prefWidth="125.0" text="Remove" />
+			</children>
+		</Pane>
+	</children>
 </Pane>
