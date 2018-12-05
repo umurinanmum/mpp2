@@ -1,18 +1,20 @@
 package book;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import DAL.DataAccessFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class BookController implements Initializable {
 
@@ -36,7 +38,51 @@ public class BookController implements Initializable {
 
 	@FXML
 	protected void save(ActionEvent actionEvent) {
+		if (authorList.getItems() == null || authorList.getItems().size() == 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Book must have at least 1 author");
+			alert.showAndWait();
+		}
+		if (title.getText() == null || title.getText().trim().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR, "Title cannot be null or empty");
+			alert.showAndWait();
+		}
 
+		if (isbn.getText() == null || isbn.getText().trim().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR, "Isbn cannot be null or empty");
+			alert.showAndWait();
+		} else {
+			BookInfo bookInfo = new BookInfo();
+			bookInfo.setIsbn(isbn.getText());
+			bookInfo.setTitle(title.getText());
+			int maxAllowedDaysInt = 0;
+			try {
+				maxAllowedDaysInt = Integer.parseInt(maxAllowedDays.getText());
+			} catch (Exception e) {
+				Alert alert = new Alert(AlertType.ERROR, "Max Allowed Days Must Be Integer");
+				alert.showAndWait();
+			}
+			bookInfo.setMaxAllowedDays(maxAllowedDaysInt);
+			bookInfo.setAuthors(new ArrayList<>());
+			for (int i = 0; i < authorList.getItems().size(); i++) {
+				bookInfo.getAuthors().add(DataAccessFactory.getInstance().getAuthorByName(
+						authorList.getItems().get(i).split(" ")[0], authorList.getItems().get(i).split(" ")[1]));
+			}
+
+			boolean result = DataAccessFactory.getInstance().addBookInfo(bookInfo);
+			if (result) {
+				Alert alert = new Alert(AlertType.INFORMATION,
+						"Book has been created with the title " + bookInfo.getTitle());
+				alert.showAndWait();
+
+				if (bookCombo.getItems() == null) {
+					bookCombo.setItems(FXCollections.observableArrayList());
+				}
+
+				bookCombo.getItems().add(bookInfo.getTitle());
+
+			}
+
+		}
 	}
 
 	@FXML

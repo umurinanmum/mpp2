@@ -31,7 +31,7 @@ public class MainFormController  {
 	protected void addEditBook_click(ActionEvent actionevent)
 	{
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../book/BookCopyUI.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../book/BookUI.fxml"));
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add/Edit Member Form");
@@ -43,6 +43,24 @@ public class MainFormController  {
 			e.printStackTrace();
 		}
 	}
+	
+	@FXML
+	protected void addEditAuthor_click(ActionEvent actionevent)
+	{
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../book/AuthorUI.fxml"));
+			Parent root = fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Add/Edit Author Form");
+			stage.setScene(new Scene(root, 800, 500)); 
+			stage.show();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	
 	@FXML
 	protected void addEditMember_click(ActionEvent actionevent)
