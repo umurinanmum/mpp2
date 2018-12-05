@@ -10,12 +10,21 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		try { 
-			Parent root = FXMLLoader.load(getClass().getResource("../book/BookUI.fxml"));
- 
-			primaryStage.setTitle("Address Form");
-			primaryStage.setScene(new Scene(root, 800, 800));
-	 
+	/*try {
+			BorderPane root = new BorderPane();
+			Scene scene = new Scene(root,400,400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+		
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("./MainForm.fxml"));
+			primaryStage.setTitle("Add/Edit Member Form");
+			primaryStage.setScene(new Scene(root, 800, 500));
+			//primaryStage.setScene(new Scene(root));
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();

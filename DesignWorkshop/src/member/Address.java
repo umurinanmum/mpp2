@@ -29,7 +29,10 @@ public class Address {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+>>>>>>> a1bac1aac4b94b91adbc8ffb6c7926506690713f
 }
