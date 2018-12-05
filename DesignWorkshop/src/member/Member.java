@@ -1,6 +1,11 @@
 package member;
 
 public class Member {
+	private int id;
+	private String name;
+	private String surname;
+	private Address address;
+	
 	public Member(String name, String surname) {
 		this.setName(name);
 		this.setSurname(surname);
@@ -43,9 +48,6 @@ public class Member {
 		this.id = id;
 	}
 
-	private int id;
-	private String name;
-	private String surname;
-	private Address address;
+	
 	
 }

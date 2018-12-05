@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import member.Address;
 
 public class User {
-
+	private Integer id;
 	private String name;
 	private String surname;
 	private String username;
@@ -60,6 +60,14 @@ public class User {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	
