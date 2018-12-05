@@ -1,5 +1,7 @@
 package DAL;
 
+import java.util.ArrayList;
+
 import book.Author;
 import book.BookInfo;
 import employee.User;
@@ -133,6 +135,10 @@ public class DataAccessFactory {
 		return null;
 	}
 	
+	/*public ArrayList<Author> getAllAuthors(){
+		
+	}
+	*/
 	public User getUserById(int id) {
 		return userDB.get(id);
 	}
