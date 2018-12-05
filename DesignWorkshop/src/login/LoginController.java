@@ -1,10 +1,11 @@
-package controller;
+package login;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import DAL.DataAccess;
 import DAL.DataAccessFactory;
+import employee.Role;
 import employee.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,18 +27,23 @@ public class LoginController {
 	
 	@FXML
 	protected void okAction(ActionEvent actionEvent) {
-		HashMap<Integer, User> userList = (HashMap<Integer, User>) DataAccessFactory.getInstance().getUserDB().getDB();
-		for(User user: userList.values()) {
-			if(user.getUsername().equals(username.getText()) && 
-			   user.getPassword().equals(password.getText())) {
-				loginPanel.getScene().getWindow().hide();
-			}	
+		if(username.getText().equals("admin") && password.getText().equals("admin")) {
+			SessionController.setCurrentRole(Role.ADMIN);
+			loginPanel.getScene().getWindow().hide();
+		} else {
+			HashMap<Integer, User> userList = (HashMap<Integer, User>) DataAccessFactory.getInstance().getUserDB().getDB();
+			for(User user: userList.values()) {
+				if(user.getUsername().equals(username.getText()) && 
+				   user.getPassword().equals(password.getText())) {
+					SessionController.setCurrentRole(user.getRole());
+					loginPanel.getScene().getWindow().hide();
+				}	
+			}
 		}
 	}
 	
 	@FXML
 	protected void cancelAction(ActionEvent actionEvent) {
-		
 		loginPanel.getScene().getWindow().hide();
 	}
 

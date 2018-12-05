@@ -3,7 +3,7 @@ package login;
 import employee.Role;
 
 public class SessionController {
-	public static Role currentRole;
+	private static Role currentRole = Role.NONE;
 	
 	private SessionController() {
 		

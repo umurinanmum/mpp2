@@ -53,7 +53,7 @@ public class AuthorController {
 			author.setPhone(phone.getText());
 			author.setBio(bio.getText());
 			author.setCredentials(credentials.getText());
-			author.setAddress(new Address());
+			author.setAddress(new Address(street.getText(),city.getText(),state.getText(),zip.getText()));
 			author.getAddress().setCity(city.getText());
 			author.getAddress().setState(state.getText());
 			author.getAddress().setStreet(street.getText());

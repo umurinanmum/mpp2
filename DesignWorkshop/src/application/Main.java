@@ -22,7 +22,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("./MainForm.fxml"));
 			primaryStage.setTitle("Add/Edit Member Form");
-			primaryStage.setScene(new Scene(root, 800, 500));
+			primaryStage.setScene(new Scene(root, 900, 500));
 			//primaryStage.setScene(new Scene(root));
 			primaryStage.show();
 		} catch (Exception e) {
