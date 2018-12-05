@@ -135,10 +135,27 @@ public class DataAccessFactory {
 		return null;
 	}
 	
-	/*public ArrayList<Author> getAllAuthors(){
+	public ArrayList<Author> getAllAuthors(){
+		ArrayList<Author> result = new ArrayList<>();
 		
+		for(Author authorVal:authorDB.getDB().values()) {
+			result.add(authorVal);
+		}
+		
+		return result;
 	}
-	*/
+	
+	public ArrayList<BookInfo> getAllBooks(){
+		ArrayList<BookInfo> result = new ArrayList<>();
+		
+		for(BookInfo bookVal:bookDB.getDB().values()) {
+			result.add(bookVal);
+		}
+		
+		return result;
+	}
+	
+	
 	public User getUserById(int id) {
 		return userDB.get(id);
 	}
