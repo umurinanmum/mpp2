@@ -49,7 +49,7 @@ public class MainFormController  {
 	protected void addEditMember_click(ActionEvent actionevent)
 	{
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Member/AddEditMember.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../member/AddEditMember.fxml"));
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add/Edit Member Form");
