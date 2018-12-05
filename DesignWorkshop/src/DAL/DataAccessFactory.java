@@ -77,10 +77,10 @@ public class DataAccessFactory {
 	public boolean updateUser(User user) {
 		for (User userVal : userDB.getDB().values()) {
 			if (user.getUsername().equals(userVal.getUsername()))
-				return false;
+				userDB.add(userVal.getId(), user);
+				return true;
 		}
-		userDB.add(user.getId(), user);
-		return true;
+		return false;
 	}
 
 	public boolean updateBookInfo(BookInfo bookInfo) {
@@ -96,20 +96,21 @@ public class DataAccessFactory {
 	public boolean updateMember(Member member) {
 		for (Member memberVal : memberDB.getDB().values()) {
 			if (member.getName().equals(memberVal.getName()))
-				return false;
+				memberDB.add(memberVal.getId(), member);
+				return true;
 		}
-		memberDB.add(member.getId(), member);
-		return true;
+		return false;
+		
 	}
 
 	public boolean updateAuthor(Author author) {
 		for (Author authorVal : authorDB.getDB().values()) {
 			if (author.getFirstName().equals(authorVal.getFirstName())
 					&& author.getLastName().equals(authorVal.getLastName()))
-				return false;
+				authorDB.add(authorVal.getId(), author);
+				return true;
 		}
-		authorDB.add(author.getId(), author);
-		return true;
+		return false;
 	}
 
 	public DataAccess<Integer, User> getUserDB() {
