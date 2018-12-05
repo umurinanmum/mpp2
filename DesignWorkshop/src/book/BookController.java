@@ -92,7 +92,43 @@ public class BookController implements Initializable {
 
 	@FXML
 	protected void updateBook(ActionEvent actionEvent) {
+		if (authorList.getItems() == null || authorList.getItems().size() == 0) {
+			Alert alert = new Alert(AlertType.ERROR, "Book must have at least 1 author");
+			alert.showAndWait();
+		}
+		if (title.getText() == null || title.getText().trim().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR, "Title cannot be null or empty");
+			alert.showAndWait();
+		}
 
+		if (isbn.getText() == null || isbn.getText().trim().isEmpty()) {
+			Alert alert = new Alert(AlertType.ERROR, "Isbn cannot be null or empty");
+			alert.showAndWait();
+		} else {
+			BookInfo bookInfo = new BookInfo();
+			bookInfo.setIsbn(isbn.getText());
+			bookInfo.setTitle(title.getText());
+			int maxAllowedDaysInt = 0;
+			try {
+				maxAllowedDaysInt = Integer.parseInt(maxAllowedDays.getText());
+			} catch (Exception e) {
+				Alert alert = new Alert(AlertType.ERROR, "Max Allowed Days Must Be Integer");
+				alert.showAndWait();
+			}
+			bookInfo.setMaxAllowedDays(maxAllowedDaysInt);
+			bookInfo.setAuthors(new ArrayList<>());
+			for (int i = 0; i < authorList.getItems().size(); i++) {
+				bookInfo.getAuthors().add(DataAccessFactory.getInstance().getAuthorByName(
+						authorList.getItems().get(i).split(" ")[0], authorList.getItems().get(i).split(" ")[1]));
+			}
+
+			boolean result = DataAccessFactory.getInstance().updateBookInfo(bookInfo);
+			if (result) {
+				Alert alert = new Alert(AlertType.INFORMATION, "Book has been updated ");
+				alert.showAndWait();
+
+			}
+		}
 	}
 
 	@FXML
@@ -110,7 +146,7 @@ public class BookController implements Initializable {
 		populateAuthorCombo();
 
 		authorCombo.valueProperty().addListener((ChangeListener<String>) (value, old, newVal) -> {
-
+			authorList.getItems().clear();
 			if (newVal != null) {
 				authorList.getItems().add(newVal);
 			}
@@ -130,7 +166,7 @@ public class BookController implements Initializable {
 					if (selectedBook.getAuthors() != null) {
 						for (int i = 0; i < selectedBook.getAuthors().size(); i++) {
 							authorList.getItems().add(selectedBook.getAuthors().get(i).getFirstName() + " "
-									+ authorList.getItems().add(selectedBook.getAuthors().get(i).getLastName()));
+									+ selectedBook.getAuthors().get(i).getLastName());
 						}
 					}
 				}

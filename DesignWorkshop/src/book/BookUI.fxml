@@ -24,12 +24,12 @@
 			layoutY="181.0" />
 		<Label layoutX="31.0" layoutY="241.0" text="Authors" />
 		<ListView fx:id="authorList" layoutX="31.0" layoutY="296.0"
-			prefHeight="200.0" prefWidth="200.0" />
+			prefHeight="153.0" prefWidth="200.0" />
 		<Button fx:id="removeAuthor" layoutX="256.0" layoutY="296.0"
 			mnemonicParsing="false" onAction="#removeAuthor" text="Remove Author" />
-		<Button fx:id="save" layoutX="178.0" layoutY="542.0"
-			mnemonicParsing="false" text="Save" onAction="#save" />
-		<Button fx:id="cancel" layoutX="282.0" layoutY="542.0"
+		<Button fx:id="save" layoutX="253.0" layoutY="363.0"
+			mnemonicParsing="false" onAction="#save" text="Save" />
+		<Button fx:id="cancel" layoutX="323.0" layoutY="363.0"
 			mnemonicParsing="false" text="Cancel" />
 		<ComboBox fx:id="authorCombo" layoutX="202.0" layoutY="236.0"
 			prefWidth="150.0" />

@@ -17,19 +17,20 @@ public class DataAccessFactory {
 	private final DataAccess<Integer, Member> memberDB = new DataAccessImpl<Integer, Member>();
 	private final DataAccess<Integer, Author> authorDB = new DataAccessImpl<Integer, Author>();
 	private static DataAccessFactory instance;
-	
-	private DataAccessFactory() {}
-	
+
+	private DataAccessFactory() {
+	}
+
 	public static DataAccessFactory getInstance() {
-		if(instance == null)
+		if (instance == null)
 			instance = new DataAccessFactory();
 		return instance;
 	}
-	
-	//Add
+
+	// Add
 	public boolean addUser(User user) {
-		for(User userVal:userDB.getDB().values()) {
-			if(user.getUsername().equals(userVal.getUsername()))
+		for (User userVal : userDB.getDB().values()) {
+			if (user.getUsername().equals(userVal.getUsername()))
 				return false;
 		}
 		user.setId(userId);
@@ -37,21 +38,21 @@ public class DataAccessFactory {
 		userId++;
 		return true;
 	}
-	
+
 	public boolean addBookInfo(BookInfo bookInfo) {
-		for(BookInfo bookVal:bookDB.getDB().values()) {
-			if(bookInfo.getTitle().equals(bookVal.getTitle()))
+		for (BookInfo bookVal : bookDB.getDB().values()) {
+			if (bookInfo.getTitle().equals(bookVal.getTitle()))
 				return false;
 		}
 		bookInfo.setId(bookId);
 		bookDB.add(bookId, bookInfo);
 		bookId++;
-		return true;	
+		return true;
 	}
 
 	public boolean addMember(Member member) {
-		for(Member memberVal:memberDB.getDB().values()) {
-			if(member.getName().equals(memberVal.getName()))
+		for (Member memberVal : memberDB.getDB().values()) {
+			if (member.getName().equals(memberVal.getName()))
 				return false;
 		}
 		member.setId(memberId);
@@ -59,11 +60,11 @@ public class DataAccessFactory {
 		memberId++;
 		return true;
 	}
-	
+
 	public boolean addAuthor(Author author) {
-		for(Author authorVal:authorDB.getDB().values()) {
-			if(author.getFirstName().equals(authorVal.getFirstName()) && 
-			   author.getLastName().equals(authorVal.getLastName()))
+		for (Author authorVal : authorDB.getDB().values()) {
+			if (author.getFirstName().equals(authorVal.getFirstName())
+					&& author.getLastName().equals(authorVal.getLastName()))
 				return false;
 		}
 		author.setId(authorId);
@@ -71,109 +72,109 @@ public class DataAccessFactory {
 		authorId++;
 		return true;
 	}
-	
-	//Update
+
+	// Update
 	public boolean updateUser(User user) {
-		for(User userVal:userDB.getDB().values()) {
-			if(user.getUsername().equals(userVal.getUsername()))
+		for (User userVal : userDB.getDB().values()) {
+			if (user.getUsername().equals(userVal.getUsername()))
 				return false;
 		}
-		userDB.add(user.getId(),user);
-		return true;
-	}
-	
-	public boolean updateBookInfo(BookInfo bookInfo) {
-		for(BookInfo bookVal:bookDB.getDB().values()) {
-			if(bookInfo.getTitle().equals(bookVal.getTitle()))
-				return false;
-		}
-		bookDB.add(bookInfo.getId(), bookInfo);
+		userDB.add(user.getId(), user);
 		return true;
 	}
 
+	public boolean updateBookInfo(BookInfo bookInfo) {
+		for (BookInfo bookVal : bookDB.getDB().values()) {
+			if (bookInfo.getTitle().equals(bookVal.getTitle())) {
+				bookDB.update(bookVal.getId(), bookInfo);
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public boolean updateMember(Member member) {
-		for(Member memberVal:memberDB.getDB().values()) {
-			if(member.getName().equals(memberVal.getName()))
+		for (Member memberVal : memberDB.getDB().values()) {
+			if (member.getName().equals(memberVal.getName()))
 				return false;
 		}
-		memberDB.add(member.getId(),member);
+		memberDB.add(member.getId(), member);
 		return true;
 	}
-	
+
 	public boolean updateAuthor(Author author) {
-		for(Author authorVal:authorDB.getDB().values()) {
-			if(author.getFirstName().equals(authorVal.getFirstName()) && 
-			   author.getLastName().equals(authorVal.getLastName()))
+		for (Author authorVal : authorDB.getDB().values()) {
+			if (author.getFirstName().equals(authorVal.getFirstName())
+					&& author.getLastName().equals(authorVal.getLastName()))
 				return false;
 		}
 		authorDB.add(author.getId(), author);
 		return true;
 	}
-	
+
 	public DataAccess<Integer, User> getUserDB() {
 		return userDB;
 	}
-	
+
 	public DataAccess<Integer, BookInfo> getBookDB() {
 		return bookDB;
 	}
-	
+
 	public DataAccess<Integer, Member> getMemberDB() {
 		return memberDB;
 	}
-	
+
 	public DataAccess<Integer, Author> getAuthorDB() {
 		return authorDB;
 	}
-	
-	//Getters
+
+	// Getters
 	public BookInfo getBookInfoByName(String bookName) {
-		for(BookInfo bookVal:bookDB.getDB().values()) {
-			if(bookName.equals(bookVal.getTitle()))
+		for (BookInfo bookVal : bookDB.getDB().values()) {
+			if (bookName.equals(bookVal.getTitle()))
 				return bookVal;
 		}
 		return null;
 	}
-	
+
 	public Author getAuthorByName(String name, String lastname) {
-		for(Author authorVal:authorDB.getDB().values()) {
-			if(name.equals(authorVal.getFirstName())&& lastname.equals(lastname))
+		for (Author authorVal : authorDB.getDB().values()) {
+			if (name.equals(authorVal.getFirstName()) && lastname.equals(lastname))
 				return authorVal;
 		}
 		return null;
 	}
-	
-	public ArrayList<Author> getAllAuthors(){
+
+	public ArrayList<Author> getAllAuthors() {
 		ArrayList<Author> result = new ArrayList<>();
-		
-		for(Author authorVal:authorDB.getDB().values()) {
+
+		for (Author authorVal : authorDB.getDB().values()) {
 			result.add(authorVal);
 		}
-		
+
 		return result;
 	}
-	
-	public ArrayList<BookInfo> getAllBooks(){
+
+	public ArrayList<BookInfo> getAllBooks() {
 		ArrayList<BookInfo> result = new ArrayList<>();
-		
-		for(BookInfo bookVal:bookDB.getDB().values()) {
+
+		for (BookInfo bookVal : bookDB.getDB().values()) {
 			result.add(bookVal);
 		}
-		
+
 		return result;
 	}
-	
-	
+
 	public User getUserById(int id) {
 		return userDB.get(id);
 	}
-		
+
 	public Member getMemberById(int id) {
 		return memberDB.get(id);
 	}
-	
+
 	public Author getAuthorById(int id) {
 		return authorDB.get(id);
 	}
-	
+
 }
