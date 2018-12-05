@@ -1,5 +1,6 @@
 package member;
 
+import DAL.DataAccessFactory;
 import DAL.DataAccessImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +11,7 @@ import javafx.scene.control.TextField;
 public class MemberController {
 	
 	public static Integer memberID=0;
-	public static DataAccessImpl<Integer,Member> memberdal=new DataAccessImpl<Integer,Member>();
+	public static DataAccessFactory memberdal=DataAccessFactory.getInstance();
 	
 	@FXML
 	private TextField fname;
@@ -81,7 +82,7 @@ public class MemberController {
 		st.setState(state.getText());
 		st.setZip(zip.getText());
 		mb.setAddress(st);
-		memberdal.add(memberID, mb);
+		memberdal.addMember(mb);
 		System.out.println("member added");
 	}
 	
@@ -111,7 +112,7 @@ public class MemberController {
 			alert.show();
 			return;
 		}
-		Member mb=memberdal.get(id);
+		Member mb=memberdal.getMemberById(id);
 		
 		fnameedit.setText(mb.getName());
 		lnameedit.setText(mb.getSurname());
@@ -168,7 +169,7 @@ public class MemberController {
 			return;
 		}
 		
-		Member mb=memberdal.get(id);
+		Member mb=memberdal.getMemberById(id);
 		mb.setName(fnameedit.getText());
 		mb.setSurname(lnameedit.getText());
 		mb.setEmail(emailedit.getText());
@@ -181,7 +182,7 @@ public class MemberController {
 		System.out.println("member saved");
 		for(Integer i=1;i<=memberID;i++)
 		{
-			System.out.println(memberdal.get(i).getName()+ " "+memberdal.get(i).getSurname());
+			System.out.println(memberdal.getMemberById(i).getName()+ " "+memberdal.getMemberById(i).getSurname());
 		}
 	}
 	
