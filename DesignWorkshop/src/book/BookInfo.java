@@ -3,7 +3,45 @@ package book;
 import java.util.ArrayList;
 
 public class BookInfo {
+	public BookInfo() {
+		
+	}
+	
 	private Integer id;
+
+	public BookInfo(int allowedDays, String title, String isbn) {
+		this.maxAllowedDays = allowedDays;
+		this.setTitle(title);
+		this.setIsbn(isbn);
+	}
+	
+	public ArrayList<BookCopy> getCopies() {
+		return copies;
+	}
+	public void setCopies(ArrayList<BookCopy> copies) {
+		this.copies = copies;
+	}
+	
+	public void addCopy(BookCopy copy) {
+		this.copies.add(copy);
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	private int maxAllowedDays;
 	private String title;
 	private String isbn;
@@ -22,24 +60,7 @@ public class BookInfo {
 	public void setMaxAllowedDays(int maxAllowedDays) {
 		this.maxAllowedDays = maxAllowedDays;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	public ArrayList<BookCopy> getCopies() {
-		return copies;
-	}
-	public void setCopies(ArrayList<BookCopy> copies) {
-		this.copies = copies;
-	}
+	
 	public ArrayList<Author> getAuthors() {
 		return authors;
 	}

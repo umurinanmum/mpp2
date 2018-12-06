@@ -1,7 +1,7 @@
 package DAL;
 
 import java.util.ArrayList;
-
+import log.*;
 import book.Author;
 import book.BookInfo;
 import employee.User;
@@ -12,10 +12,13 @@ public class DataAccessFactory {
 	private int bookId = 0;
 	private int memberId = 0;
 	private int authorId = 0;
+	private int checkoutRecordId = 0;
 	private final DataAccess<Integer, User> userDB = new DataAccessImpl<Integer, User>();
 	private final DataAccess<Integer, BookInfo> bookDB = new DataAccessImpl<Integer, BookInfo>();
 	private final DataAccess<Integer, Member> memberDB = new DataAccessImpl<Integer, Member>();
 	private final DataAccess<Integer, Author> authorDB = new DataAccessImpl<Integer, Author>();
+	private final DataAccess<Integer, CheckoutRecord> checkoutDB = new DataAccessImpl<Integer, CheckoutRecord>();
+	
 	private static DataAccessFactory instance;
 
 	private DataAccessFactory() {
@@ -73,6 +76,13 @@ public class DataAccessFactory {
 		return true;
 	}
 
+	public boolean addCheckoutRecord(CheckoutRecord checkoutRecord) {
+		
+		checkoutRecord.setId(checkoutRecordId);
+		checkoutDB.add(checkoutRecordId, checkoutRecord);
+		checkoutRecordId++;
+		return true;
+	}
 	// Update
 	public boolean updateUser(User user) {
 		for (User userVal : userDB.getDB().values()) {
