@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 import member.*;
 
 public class CheckoutController implements Initializable {
-	@FXML
+	/*@FXML
 	private ComboBox cbMembers;
 	@FXML
 	private ComboBox cbBooks;
@@ -31,7 +31,7 @@ public class CheckoutController implements Initializable {
 		System.out.println("Checkout clicked");
 		
 	}
-
+*/
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
