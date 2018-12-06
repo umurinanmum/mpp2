@@ -13,22 +13,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-	/*try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}*/
-		/*try {
-			Parent root = FXMLLoader.load(getClass().getResource("./Checkout.fxml"));
-			primaryStage.setTitle("Address Form");
-			primaryStage.setScene(new Scene(root, 800, 500));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
 		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("./MainForm.fxml"));
@@ -39,6 +23,8 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 
 	public static void main(String[] args) {
