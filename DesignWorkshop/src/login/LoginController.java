@@ -28,7 +28,7 @@ public class LoginController {
 	@FXML
 	protected void okAction(ActionEvent actionEvent) {
 		if(username.getText().equals("admin") && password.getText().equals("admin")) {
-			SessionController.setCurrentRole(Role.ADMIN);
+			SessionController.setCurrentRole(Role.BOTH);
 			loginPanel.getScene().getWindow().hide();
 		} else {
 			HashMap<Integer, User> userList = (HashMap<Integer, User>) DataAccessFactory.getInstance().getUserDB().getDB();
