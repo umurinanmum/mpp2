@@ -1,6 +1,15 @@
 package member;
 
 public class Member {
+	public Member() {
+		
+	}
+	
+	public Member(String name, String surName) {
+		this.name = name;
+		this.surname = surName;
+	}
+	
 	private Integer id;
 	private String name;
 	private String surname;
