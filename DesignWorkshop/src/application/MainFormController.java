@@ -20,7 +20,7 @@ public class MainFormController  {
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add/Edit Member Form");
-			stage.setScene(new Scene(root, 800, 500));
+			stage.setScene(new Scene(root, 400, 200));
 			//primaryStage.setScene(new Scene(root));
 			stage.show();
 			
