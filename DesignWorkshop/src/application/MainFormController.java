@@ -19,7 +19,7 @@ public class MainFormController  {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../login/login.fxml"));
 			Parent root = fxmlLoader.load();
 			Stage stage = new Stage();
-			stage.setTitle("Add/Edit Member Form");
+			stage.setTitle("Login");
 			stage.setScene(new Scene(root, 400, 200));
 			//primaryStage.setScene(new Scene(root));
 			stage.show();
