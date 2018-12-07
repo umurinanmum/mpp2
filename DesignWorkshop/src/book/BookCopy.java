@@ -5,14 +5,16 @@ public class BookCopy {
 		this.setUid(uid);
 		this.isAvailable = isAvailable;
 	}
+
 	public BookCopy(String uid, boolean isAvailable, BookInfo book) {
 		this(uid, isAvailable);
 		this.setBook(book);
 	}
-	
+
 	public String getUid() {
 		return uid;
 	}
+
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
@@ -20,6 +22,7 @@ public class BookCopy {
 	public BookInfo getBook() {
 		return book;
 	}
+
 	public void setBook(BookInfo book) {
 		this.book = book;
 	}

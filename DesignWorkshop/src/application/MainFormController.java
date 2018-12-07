@@ -89,6 +89,25 @@ public class MainFormController  {
 		}
 	}
 	
+	@FXML
+	protected void addCopy_click(ActionEvent actionevent)
+	{
+		if(SessionController.getCurrentRole().equals(Role.ADMIN) || 
+			SessionController.getCurrentRole().equals(Role.BOTH)) {
+			try {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../book/BookCopyUI.fxml"));
+				Parent root = fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setTitle("Book Copy Form");
+				stage.setScene(new Scene(root, 800, 500)); 
+				stage.show();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 	
 	@FXML

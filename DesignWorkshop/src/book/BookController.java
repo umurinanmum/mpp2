@@ -35,6 +35,10 @@ public class BookController implements Initializable {
 
 	@FXML
 	protected ListView<String> authorList = new ListView<String>();
+	
+	@FXML
+	protected ListView<String> copyBooks ;
+	
 
 	@FXML
 	protected void save(ActionEvent actionEvent) {
@@ -159,6 +163,14 @@ public class BookController implements Initializable {
 				// set the fields
 				BookInfo selectedBook = DataAccessFactory.getInstance().getBookInfoByName(newVal);
 				if (selectedBook != null) {
+					copyBooks.getItems().clear();
+					if(selectedBook.getCopies()!= null) {
+						for (int i = 0; i < selectedBook.getCopies().size(); i++) {
+							copyBooks.getItems().add(selectedBook.getCopies().get(i).getUid());
+						}
+					}
+					
+					
 					title.setText(selectedBook.getTitle());
 					isbn.setText(selectedBook.getIsbn());
 					maxAllowedDays.setText(selectedBook.getMaxAllowedDays() + "");

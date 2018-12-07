@@ -5,14 +5,22 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="252.0" layoutY="27.0" text="Book Copy">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <ComboBox layoutX="36.0" layoutY="76.0" prefWidth="150.0" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="book.BookCopyCotroller">
+	<children>
+		<Label layoutX="252.0" layoutY="27.0" text="Book Copy">
+			<font>
+				<Font size="19.0" />
+			</font>
+		</Label>
+		<ComboBox fx:id="bookCombo" layoutX="36.0" layoutY="76.0"
+			prefWidth="150.0" />
+		<Label layoutX="36.0" layoutY="165.0" text="Uid" />
+		<TextField fx:id="uid" layoutX="123.0" layoutY="160.0" />
+		<Button layoutX="46.0" layoutY="292.0" mnemonicParsing="false"
+			onAction="#save" text="Save" />
+	</children>
 </Pane>
